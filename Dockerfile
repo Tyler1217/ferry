@@ -10,9 +10,8 @@ RUN git clone https://gitee.com/yllan/ferry_web.git
 
 WORKDIR ferry_web
 
-RUN npm install -g cnpm --registry=https://registry.npmmirror.com
-RUN npm uninstall node-sass && npm i -D sass --registry=https://registry.npmmirror.com
-RUN cnpm install
+RUN npm config set registry https://registry.npmmirror.com/
+RUN npm install
 RUN echo $'# just a flag\n\
 ENV = \'production\'\n\n\
 # base api\n\
